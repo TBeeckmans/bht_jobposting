@@ -1,0 +1,21 @@
+uuid: 065cbb1d-8b4b-4cce-8858-470cace805d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_valid_through
+    - node.type.jobposting
+id: node.jobposting.field_valid_through
+field_name: field_valid_through
+entity_type: node
+bundle: jobposting
+label: 'Valid through'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 1663006917
+default_value_callback: ''
+settings: {  }
+field_type: timestamp

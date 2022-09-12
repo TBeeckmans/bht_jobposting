@@ -1,0 +1,10 @@
+name: BHT jobPosing
+type: module
+description: Provides the jobPosting related functionalities.
+package: BHT
+core_version_requirement:  ^9
+dependencies:
+  - bht_location
+  - bht_member
+  - webform
+  - content_translation

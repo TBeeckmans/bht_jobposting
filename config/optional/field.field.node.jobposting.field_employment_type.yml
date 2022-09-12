@@ -1,0 +1,21 @@
+uuid: 875fc1b4-175b-4245-ac55-0a8df426c4f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_employment_type
+    - node.type.jobposting
+  module:
+    - options
+id: node.jobposting.field_employment_type
+field_name: field_employment_type
+entity_type: node
+bundle: jobposting
+label: 'Employment type'
+description: 'Type of employment. E.g. full-time, part-time, contractor, temporary, internship (student), volunteer, per diem (depends on the employers available work or the employees availability).'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

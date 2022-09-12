@@ -1,0 +1,19 @@
+uuid: bdf1b5a8-b833-49ea-9086-6e4df96bb71e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_application_email
+    - node.type.jobposting
+id: node.jobposting.field_application_email
+field_name: field_application_email
+entity_type: node
+bundle: jobposting
+label: 'Application email'
+description: 'By defining the application email addresses the applicant will have the possibility to immediately apply from within the website by filling in a form. The application will be sent to the application email addresses.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

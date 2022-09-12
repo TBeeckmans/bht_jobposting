@@ -1,0 +1,19 @@
+uuid: 07084939-19da-4d65-ac68-7a39ab64be7c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_experience_requirements
+    - node.type.jobposting
+id: node.jobposting.field_experience_requirements
+field_name: field_experience_requirements
+entity_type: node
+bundle: jobposting
+label: 'Experience requirements'
+description: 'The experience that''s required for the job posting. E.g.: Minimum 3 years experience as physiotherapist'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,21 @@
+uuid: 6ebd5401-3de5-4055-a665-d5ee9fc1a166
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_qualifications
+    - node.type.jobposting
+  module:
+    - text
+id: node.jobposting.field_qualifications
+field_name: field_qualifications
+entity_type: node
+bundle: jobposting
+label: Qualifications
+description: 'Specific qualifications required for this role or Occupation.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

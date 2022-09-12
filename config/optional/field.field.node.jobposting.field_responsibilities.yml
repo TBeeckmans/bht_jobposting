@@ -1,0 +1,21 @@
+uuid: fedd292a-5f05-48d1-b2d6-be1c647a0eec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_responsibilities
+    - node.type.jobposting
+  module:
+    - text
+id: node.jobposting.field_responsibilities
+field_name: field_responsibilities
+entity_type: node
+bundle: jobposting
+label: Responsibilities
+description: 'Responsibilities associated with this role or Occupation.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

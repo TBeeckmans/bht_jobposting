@@ -1,0 +1,21 @@
+uuid: 7d516e17-f8a2-4b61-be77-1485997fa8eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description
+    - node.type.jobposting
+  module:
+    - text
+id: node.jobposting.field_description
+field_name: field_description
+entity_type: node
+bundle: jobposting
+label: Description
+description: 'The short description of the job application.<br><strong>Important:</strong> the description made available for Google jobs will be combined with the job responsibilities, qualifications, skills, working hours, education requirements and experience requirement.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

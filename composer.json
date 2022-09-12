@@ -1,0 +1,15 @@
+{
+    "name": "bht/bht_jobposting",
+    "type": "drupal-custom-module",
+    "keywords": ["Drupal", "bht_jobposting"],
+    "authors": [
+      {
+        "name": "Thierry Beeckmans",
+        "email": "webmaster@bht.be"
+      }
+    ],
+    "require": {
+        "bht/bht_location": "^1.0",
+        "drupal/webform": "^6.1"
+    }
+}

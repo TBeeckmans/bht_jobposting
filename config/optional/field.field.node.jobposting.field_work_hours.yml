@@ -1,0 +1,19 @@
+uuid: 074dba90-0fbd-439a-b43d-575291103c6e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_work_hours
+    - node.type.jobposting
+id: node.jobposting.field_work_hours
+field_name: field_work_hours
+entity_type: node
+bundle: jobposting
+label: 'Work hours'
+description: 'The typical working hours for this job (e.g. 1st shift, night shift, 8am-5pm).'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

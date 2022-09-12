@@ -1,0 +1,19 @@
+uuid: 8688dde3-3a45-420e-aec2-626613b14777
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_benefits
+    - node.type.jobposting
+id: node.jobposting.field_benefits
+field_name: field_benefits
+entity_type: node
+bundle: jobposting
+label: Benefits
+description: 'Description of benefits associated with the job.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

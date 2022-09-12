@@ -1,0 +1,17 @@
+uuid: c7746173-b633-4c5b-a999-53813bc807f0
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Job posting'
+type: jobposting
+description: 'Add a <em>job posting</em> for your organisation, a so called BHT center and manage the publication and application through the website.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

@@ -1,0 +1,21 @@
+uuid: 2843678e-bb76-4253-b6a4-fd4e7de5cd45
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_education_requirements
+    - node.type.jobposting
+  module:
+    - options
+id: node.jobposting.field_education_requirements
+field_name: field_education_requirements
+entity_type: node
+bundle: jobposting
+label: 'Education requirements'
+description: 'The educational background needed for the job posting.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

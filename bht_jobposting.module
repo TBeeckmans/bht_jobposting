@@ -1,0 +1,75 @@
+<?php
+
+use Drupal\node\NodeInterface;
+use Drupal\Core\Field\FieldDefinitionInterface;
+use Drupal\Core\Field\FieldItemListInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\user\Entity\User;
+
+
+/**
+ * Implements hook_node_grants().
+ *
+ * Assign bht_jobposting grants to the appropriate users.
+ */
+function bht_jobposting_node_grants($account, $op) {
+  $tier_levels[] = 0;
+
+  if ($op == 'update' && $account->id()) {
+    $tier_levels[] = $account->id();
+  }
+
+  $grants['bht_location'] = $tier_levels;
+
+  return $grants;
+}
+
+/**
+ * Implements hook_node_access_records_alter().
+ *
+ * Defines custom grants for the node jobposting bundle. All users need to be
+ * able to view the job postings. The edit grant may only be given to the users
+ * referenced in the field therapist of the referenced organisation, they are
+ * not granted to delete the entity.
+ * Remark: create location is a permission defined in Drupal core permissions.
+ */
+function bht_jobposting_node_access_records_alter(&$grants, NodeInterface $node) {
+  if ($node->bundle() == 'jobposting') {
+    // Default view grants.
+    $grants[] = [
+      'realm' => 'bht_jobposting',
+      'gid' => 0,
+      'grant_view' => 1,
+      'grant_update' => 0,
+      'grant_delete' => 0,
+      'priority' => 0,
+    ];
+
+    // Limit the list to users that are active members.
+    $organisation_reference = $node->get('field_organisation')->referencedEntities();
+    $user_references = $organisation_reference->get('therapist')->filter(function ($item) {
+      $target_id = $item->getValue()['target_id'];
+      /* @var $target_entity \Drupal\user\UserInterface */
+      $target_entity = \Drupal::entityTypeManager()
+        ->getStorage('user')
+        ->load($target_id);
+      return $target_entity->hasRole('member');
+    })->getValue();
+
+    // Define grants for the related active members to edit the job posting.
+    if ($user_references) {
+      foreach ($user_references as $user_reference) {
+        if (array_search($user_reference['target_id'], array_column($grants, 'gid')) === FALSE) {
+          $grants[] = [
+            'realm' => 'bht_location',
+            'gid' => $user_reference['target_id'],
+            'grant_view' => 1,
+            'grant_update' => 1,
+            'grant_delete' => 0,
+            'priority' => 0,
+          ];
+        }
+      }
+    }
+  }
+}
